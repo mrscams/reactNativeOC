@@ -20,6 +20,7 @@ class Search extends React.PureComponent {
 
     _displayDetailForFilm = (idFilm) =>{
         console.log("display film with id"+idFilm)
+        this.props.navigation.navigate("FilmDetail")
     }
     _searchFilms() {
         this.page = 0
@@ -87,7 +88,7 @@ class Search extends React.PureComponent {
                     data={this.state.films}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={
-                        ({ item }) => <FilmItem film={item}  /> 
+                        ({ item }) => <FilmItem film={item} displayDetailForFilm={this._displayDetailForFilm} /> 
                         
                     }
                     onEndReachedThreshold={0.5}

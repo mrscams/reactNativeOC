@@ -5,23 +5,24 @@ import { StyleSheet, View, Text, Image,TouchableOpacity } from 'react-native'
 import { getImageFromApi } from '../API/TMDBApi';
 
 class FilmItem extends React.PureComponent {
-    
+    /*
      _displayDetailForFilmXX = (idFilm) =>{
     console.log("display film with id: "+idFilm)
 }
+*/
   render() {
-    const film = this.props.film
     /*
-    
+    const film = this.props.film
+
     const displayDetailForFilm = this.props.displayDetailForFilm
     equivalent to  [see below]
-    
-    const { film, displayDetailForFilm } = this.props*/
+    */
+    const { film, displayDetailForFilm } = this.props
 
     return (
       <TouchableOpacity
         style={styles.main_container}
-        onPress={() => this._displayDetailForFilmXX(film.id)}>
+        onPress={() => displayDetailForFilm(film.id)}>
         <Image
           style={styles.image}
           source={{uri: getImageFromApi(film.poster_path)}}
